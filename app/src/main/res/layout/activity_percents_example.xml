@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.omega_r.libs.layouts.percent.PercentFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:text="This is PercentFrameLayout" />
+
+    </com.omega_r.libs.layouts.percent.PercentFrameLayout>
+
+    <com.omega_r.libs.layouts.percent.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorAccent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_heightPercent="15%"
+            app:layout_marginTopPercent="15%"
+            app:layout_marginBottomPercent="15%"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:text="This is PercentLinearLayout" />
+
+    </com.omega_r.libs.layouts.percent.PercentLinearLayout>
+
+    <com.omega_r.libs.layouts.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_heightPercent="30%"
+            app:layout_marginTopPercent="30%"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:text="This is PercentRelativeLayout" />
+
+    </com.omega_r.libs.layouts.percent.PercentRelativeLayout>
+
+</LinearLayout>
