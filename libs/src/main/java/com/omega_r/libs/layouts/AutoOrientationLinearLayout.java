@@ -1,11 +1,11 @@
 package com.omega_r.libs.layouts;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.LinearLayout;
 
-public class AutoOrientationLinearLayout extends LinearLayoutCompat {
+public class AutoOrientationLinearLayout extends LinearLayout {
 
     public AutoOrientationLinearLayout(Context context) {
         super(context);

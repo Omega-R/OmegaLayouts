@@ -2,8 +2,9 @@ package omega.com.omegalayoutsexample;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AutoOrientationExampleActivity extends AppCompatActivity {
 

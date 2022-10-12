@@ -7,11 +7,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.support.annotation.ColorInt;
-import android.support.annotation.DimenRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.ColorInt;
+import androidx.annotation.DimenRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.ViewGroup;
@@ -39,7 +40,11 @@ class ShadowLayoutHelper {
 
         resources = context.getResources();
         displayMetrics = resources.getDisplayMetrics();
-        defaultShadowColor = ContextCompat.getColor(context, R.color.shadow_color_omega);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            defaultShadowColor = context.getColor(R.color.shadow_color_omega);
+        } else {
+            defaultShadowColor = context.getResources().getColor(R.color.shadow_color_omega);
+        }
         if (attrs == null) {
             initDrawables(new int[]{defaultShadowColor, Color.TRANSPARENT});
         } else {
