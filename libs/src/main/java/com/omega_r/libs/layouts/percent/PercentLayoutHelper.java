@@ -2,9 +2,7 @@ package com.omega_r.libs.layouts.percent;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.NonNull;
-import android.support.v4.view.MarginLayoutParamsCompat;
-import android.support.v4.view.ViewCompat;
+import androidx.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -442,10 +440,8 @@ public class PercentLayoutHelper {
             mPreservedParams.topMargin = params.topMargin;
             mPreservedParams.rightMargin = params.rightMargin;
             mPreservedParams.bottomMargin = params.bottomMargin;
-            MarginLayoutParamsCompat.setMarginStart(mPreservedParams,
-                    MarginLayoutParamsCompat.getMarginStart(params));
-            MarginLayoutParamsCompat.setMarginEnd(mPreservedParams,
-                    MarginLayoutParamsCompat.getMarginEnd(params));
+            mPreservedParams.setMarginStart(params.getMarginStart());
+            mPreservedParams.setMarginEnd(params.getMarginEnd());
 
             if (leftMarginPercent >= 0) {
                 params.leftMargin = Math.round(widthHint * leftMarginPercent);
@@ -461,20 +457,17 @@ public class PercentLayoutHelper {
             }
             boolean shouldResolveLayoutDirection = false;
             if (startMarginPercent >= 0) {
-                MarginLayoutParamsCompat.setMarginStart(params,
-                        Math.round(widthHint * startMarginPercent));
+                params.setMarginStart(Math.round(widthHint * startMarginPercent));
                 shouldResolveLayoutDirection = true;
             }
             if (endMarginPercent >= 0) {
-                MarginLayoutParamsCompat.setMarginEnd(params,
-                        Math.round(widthHint * endMarginPercent));
+                params.setMarginEnd(Math.round(widthHint * endMarginPercent));
                 shouldResolveLayoutDirection = true;
             }
             if (shouldResolveLayoutDirection && (view != null)) {
                 // Force the resolve pass so that start / end margins are propagated to the
                 // matching left / right fields
-                MarginLayoutParamsCompat.resolveLayoutDirection(params,
-                        ViewCompat.getLayoutDirection(view));
+                params.resolveLayoutDirection(view.getLayoutDirection());
             }
             if (DEBUG) {
                 Log.d(TAG, "after fillMarginLayoutParams: (" + params.width + ", " + params.height
@@ -502,10 +495,8 @@ public class PercentLayoutHelper {
             params.topMargin = mPreservedParams.topMargin;
             params.rightMargin = mPreservedParams.rightMargin;
             params.bottomMargin = mPreservedParams.bottomMargin;
-            MarginLayoutParamsCompat.setMarginStart(params,
-                    MarginLayoutParamsCompat.getMarginStart(mPreservedParams));
-            MarginLayoutParamsCompat.setMarginEnd(params,
-                    MarginLayoutParamsCompat.getMarginEnd(mPreservedParams));
+            params.setMarginStart(mPreservedParams.getMarginStart());
+            params.setMarginEnd(mPreservedParams.getMarginEnd());
         }
 
         /**

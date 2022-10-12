@@ -2,14 +2,15 @@ package com.omega_r.libs.layouts.shadow;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.support.annotation.ColorInt;
-import android.support.annotation.DimenRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.util.AttributeSet;
+import android.widget.LinearLayout;
 
-public class ShadowLinearLayout extends LinearLayoutCompat {
+import androidx.annotation.ColorInt;
+import androidx.annotation.DimenRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+public class ShadowLinearLayout extends LinearLayout {
 
     private ShadowLayoutHelper shadowLayoutHelper;
 

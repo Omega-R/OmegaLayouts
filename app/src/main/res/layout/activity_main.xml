@@ -4,19 +4,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.AppCompatButton
+    <Button
         android:id="@+id/button_percents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Percents" />
 
-    <android.support.v7.widget.AppCompatButton
+    <Button
         android:id="@+id/button_shadows"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Shadows" />
 
-    <android.support.v7.widget.AppCompatButton
+    <Button
         android:id="@+id/button_auto_orientation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
